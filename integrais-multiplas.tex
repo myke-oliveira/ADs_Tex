@@ -26,10 +26,39 @@
 	
 	\begin{enumerate}[a]
 		\item Descreva graficamente a região de integração.
-		\item Calcule a integral dada usando a orde de integração que você achar mais conveniente.
+		\item Calcule a integral dada usando a ordem de integração que você achar mais conveniente.
 	\end{enumerate}
 	
 	(Valor da questão: 1,0)
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig/integrais-multiplas-1a}
+		\caption{Região de integração}
+		\label{fig:integrais-multiplas-1a}
+	\end{figure}
+	
+	\begin{equation*}
+		S = \int_{0}^{\frac{\pi}{6}} \int_{0}^{\frac{\pi}{3}} x \sen (x+y) dy dx
+	\end{equation*}
+	
+	\begin{equation*}
+		S = -\int_{0}^{\frac{\pi}{6}} \left[ x \cos (x+y) \right]_{y=0}^{\frac{\pi}{3}} dx
+	\end{equation*}
+	
+	\begin{equation*}
+		S = -\int_{0}^{\frac{\pi}{6}} \left( x \cos \left( x+\frac{\pi}{3} \right) - x \cos x \right) dx
+	\end{equation*}
+	
+	\begin{equation*}
+		S = -\int_{0}^{\frac{\pi}{6}} x \cos \left( x+\frac{\pi}{3} \right) dx + \int_{0}^{\frac{\pi}{6}} x \cos x dx
+	\end{equation*}
+	
+	\begin{equation*}
+		S = \left( \left[ -x \sin \left( x + \frac{\pi}{3} \right) \right]_{0}^{\frac{\pi}{6}} +\int_{0}^{\frac{pi}{6}} \sen \left( x + \frac{\pi}{3} \right) \right) dx
+		- \left( \left[ -x \sen x \right]_{0}^{\frac{\pi}{6}} + \int_{0}^{\frac{\pi}{6}} \sen x \right)
+	\end{equation*}
+	
 	
 	\section*{Questão 2}
 	
