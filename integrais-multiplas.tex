@@ -73,7 +73,7 @@
 	\end{equation*}
 	
 	\begin{equation*}
-		S = \frac{3}{6} - \frac{\pi}{6} + \frac{3\sqrt{3}}{6} - \frac{6}{6} \right]
+		S = \frac{3}{6} - \frac{\pi}{6} + \frac{3\sqrt{3}}{6} - \frac{6}{6}
 	\end{equation*}
 	
 	\begin{equation*}
@@ -83,7 +83,6 @@
 	\begin{equation*}
 		S = \frac{3\sqrt{3}-3-\pi}{6}
 	\end{equation*}
-	
 	
 	\section*{Questão 2}
 	
@@ -98,9 +97,70 @@
 	
 	(Valor da questão: 1,0)
 	
+	Descrição analítica do domínio de interação no sistema de inequações \ref{eq:desc_analitic2}.
+	
+	\begin{equation} \label{eq:desc_analitic2}
+		\left\{
+			\begin{array}{l}
+				0 \le z \le y - 2x \\
+				0 \le x \le \frac{y}{2} \\
+				0 \le y \le 2
+			\end{array}
+		\right.
+	\end{equation}
+	
+	A descrição gráfica da região de integração no plano xy é apresentada na figura \ref{fig:integrais-multiplas-2a}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig/integrais-multiplas-2a}
+		\caption{Domínio de Integração}
+		\label{fig:integrais-multiplas-2a}
+	\end{figure}
+	
+	\begin{equation*}
+		S = \int_{0}^{2} \int_{0}^{\frac{y}{2}} \int_{0}^{y-2x} dz dx dy
+	\end{equation*}
+	
+	\begin{equation*}
+		S = \int_{0}^{2} \int_{0}^{\frac{y}{2}} \left(y-2x \right) dx dy
+	\end{equation*}
+	
+	\begin{equation*}
+		S = \int_{0}^{2} \left[ yx-x^2 \right]_0^{\frac{y}{2}} dy
+	\end{equation*}
+
+	\begin{equation*}
+		S = \int_{0}^{2} \left[ \left(\frac{y^2}{2}-\frac{y^2}{4}\right) - \left(y0-0^2\right) \right] dy
+	\end{equation*}	
+	
+	\begin{equation*}
+		S = \int_{0}^{2} \left[\frac{y^2}{2}-\frac{y^2}{4} \right] dy
+	\end{equation*}	
+	
+	\begin{equation*}
+		S = \int_{0}^{2} \left[\frac{2y^2}{4}-\frac{y^2}{4} \right] dy
+	\end{equation*}
+	
+	\begin{equation*}
+		S = \int_{0}^{2} \left[\frac{y^2}{4}\right] dy
+	\end{equation*}	
+	
+	\begin{equation*}
+		S = \left[\frac{y^3}{12} \right]_0^2
+	\end{equation*}
+	
+	\begin{equation*}
+		S = \frac{8}{12} u.v.
+	\end{equation*}	
+	
+	O resultado pode significar o volume do sólido.
+	
+	A função que delimita inferiormente o sólido é $ z = 0 $ e superiormente é $ z = y - 2x $
+	
 	\section*{Questão 3}
 	
-	Dada a integral $ \int \int_R x \exp{xy} dA $, sendo que R é a região dos pontos do plano xy dada pelo produto cartesiano $ R=[0, 1] \times [0, 1] $.
+	Dada a integral $ \int \int_R x e^{xy} dA $, sendo que R é a região dos pontos do plano xy dada pelo produto cartesiano $ R=[0, 1] \times [0, 1] $.
 	
 	\begin{enumerate}[a]
 		\item Fazer a descrição analítica da região de integração.
