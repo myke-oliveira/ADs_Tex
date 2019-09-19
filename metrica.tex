@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{indentfirst}
+\usepackage{grffile}
 
 \author{Myke Albuquerque Pinto de Oliveira}
 \title{\Huge Atividade a Distância 1 \\ 
@@ -36,20 +37,159 @@
 	
 	\begin{enumerate}[a]
 		\item Participação qualitativa em pelo menos DOIS momentos no fórum 1 (Seu texto e um comentário sobre um texto de um colega) (Valor: 0,75 pontos);
-		\item Resumo da sua participação com o máximo de \frac{1}{2} página apresentado na AD1.
+		\item Resumo da sua participação com o máximo de $ \frac{1}{2} $ página apresentado na AD1.
 	\end{enumerate}
+
+	Meu texto propôs o estudo da planicidade de grafos como um tópico introdutório de topologia para o ensino médio e forneceu como problema motivacional o caso de projeto de placas de circuito impresso, no qual componentes eletrônicos precisam ser devidamente conectados mas tem-se como restrição de que conexões diferentes não podem se cruzar.
+	
+	Outro problema que desperta o meu interesse é o caso da relação de número de vértices, faces e arestas dos sólidos da geometria, fato esse que foi destacado por Jonas. Creio que esses são bons casos introdutórios para a topologia.
 	
 	\section*{Questão 2}
 	
+	Seja $ M = \mathbb{R}^n $, como $ x_k = (x_1, x_2, \dots, x_n) $ e $ y_k = (y_1, y_2, \dots, y_n) $ e seja também $ d: M \times M \rightarrow \mathbb{R} $  dada por $ d(x_k, y_k) = \sum_{k=1}^{n} \left| x_k - y_k \right| $. Mostre que $ d $ é uma métrica.
+	
+	Atenção: Não há necessidade de abrir o somatório, basta saber trabalhar com ele.
+	
+	(Pontuação: 2.0 ponto)
+	
+	\textbf{M1:} O resultado \ref{eq:M11} é implicação da própria definição de módulo e de que a soma de números naturais é natural. O resultado \ref{eq:M12} justifica a segunda parte da propriedade M1.
+	
+	\begin{equation}\label{eq:M11}
+		\sum_{k=1}^{n} \left| x_k - y_k \right| \ge 0
+	\end{equation}
+	
+	\begin{equation}\label{eq:M12}
+		\sum_{k=1}^{n} \left| x_k - y_k \right| = 0 \Leftrightarrow \left| x_k - y_k \right| = 0 \Leftrightarrow x_k - y_k = 0 \Leftrightarrow x_k = y_k
+	\end{equation}
+	
+	\textbf{M2:}
+	
+	\begin{equation}
+		\begin{aligned}
+		d(x, y) &=\sum_{k=1}^{n} \left| x_k - y_k \right| = \sum_{k=1}^{n} \left| -1 \right| \left| x_k - y_k \right| = \sum_{k=1}^{n} \left| (-1) \cdot (x_k - y_k)\right|\\
+		&= \sum_{k=1}^{n} \left|-x_k + y_k \right| = \sum_{k=1}^{n} \left|y_k - x_k \right| = d(y, x)
+		\end{aligned}
+	\end{equation}
+	
+	\textbf{M3:} Dado $ z_k = (z_1, z_2, \cdots, z_n) $, pode-se verificar \ref{eq:M3} e concluir \ref{eq:M3a}.
+	
+	\begin{equation}\label{eq:M3}
+		\begin{aligned}
+		d(x, z) &= \sum_{k=1}^{n} \left| z_k - x_k \right| = \sum_{k=1}^{n} \left| z_k  - y_k + y_k - x_k \right| \le 
+		\sum_{k=1}^{n} \left( \left| z_k - y_k \right| + \left| y_k - x_k \right| \right) \\&=
+		\sum_{k=1}^{n} \left( \left| z_k - y_k \right|\right) +
+		\sum_{k=1}^{n} \left(\left| y_k - x_k \right| \right) = d(x_k, y_k) + d(y_k, z_k)
+		\end{aligned}
+	\end{equation}
+	
+	\begin{equation}\label{eq:M3a}
+		\therefore d(x_k, z_k) \le d(x_k, y_k) + d(y_k, z_k)
+	\end{equation}
+	
 	\section*{Questão 3}
 	
+	Dê um contra-exemplo para mostrar que
+	
+	\begin{equation}
+		d((x, y), (u, v)) = min{(x-u)^2, (y-v)^2}
+	\end{equation}
+	
+	não é métrica de $ \mathbb{R}^2$.
+	
+	Dado $ (x, y) = (0, 0) $ e $ (u, v) = (1, 0) $, tem-se que $ d((x, y), (y, v)) = min\{(0 - 1)^2, (0-0)^2\} = 0 $, mas $(0, 0) \neq (1, 0) $, ou seja, $d$ não atende a propriedade M1 e portanto não é uma métrica de $ \mathbb{R}^2$.
 	\section*{Questão 4}
+	
+	Dados os conjuntos $A$ e $B$ de $\mathbb{R}^2$:
+	
+	\begin{equation*}
+		A = \left\{ (x, y) \in \mathbb{R}^2, y > x^2 \right\}
+	\end{equation*}
+	
+	\begin{equation*}
+		B = \left\{ (x, y) \in \mathbb{R} ^2, -2 < x < 0, y > -x-2 \quad e \quad y < 0 \right\}
+	\end{equation*}
+	
+	4.1. Represente geometricamente estes conjuntos no mesmo sistema cartesiano.
+	
+	4.2. Determine o $ diam(A) $ e $ diam(B) $.
+	
+	4.3 Determine $ d(A, B) $.
+	
+	Os conjuntos $A$ e $B$ estão representados no mesmo sistema cartesiano na figura \ref{fig:metricas-4}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig/metricas-4.1}
+		\caption{Conjuntos $A$ e $B$}
+		\label{fig:metricas-4}
+	\end{figure}
+	
+	O diâmetro do conjunto $A$ é $+\infty$, pois é possível definir um subconjunto das distâncias em $A$, dado pelos pontos simétricos sobre a curva $y = 2x^2$. Esse conjunto $\{d((x, 2x^2), (-x, 2x^2) ) = \sqrt{2x}; x \in \mathbb{R}\}$ é ilimitado superiormente, portanto $diam(A) = +\infty$
+	
+	\begin{equation}
+		diam(A) = +\infty
+	\end{equation}
+	
+	No conjunto $B$, o supremo das distâncias é a semireta ligando os pontos $(-1, 0)$ e $(0, -1)$.
+	
+	\begin{equation}
+		diam(B) = d((-2, 0), (0, -2)) = 2\sqrt{2}
+	\end{equation}
+	
+	\begin{equation}
+		d(A, B) = 0
+	\end{equation}
 	
 	\section*{Questão 5}
 	
+	Determine o que se pede:
+	
+	\begin{enumerate}[a)]
+		\item Represente geométricamente o $int(A)$, onde $A = \{ (x, y) \in \mathbb{R}^2; y \ge \frac{1}{x} \quad e \quad x \ge 0\}$
+		\item Escreva os pontoso do conjunto $\textbf{B}$ determinado por $B = \left\{ \frac{n}{n+1}\right\} $. Qual o ponto de acumulação do conjunto \textbf{B}?
+		\item Determine $A'$.
+		\item Determine a fronteira de $\text{B}$.
+	\end{enumerate}
+	(Pontuação: 2,0 pontos)
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig/integrais-multiplas-5a}
+		\caption{Conjunto $ int(A) $}
+		\label{fig:integrais-multiplas-5a}
+	\end{figure}
+	
+	O conjunto $ B = \{ \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \frac{5}{6}, \frac{6}{7}, \frac{7}{8}, \cdots \} $. O ponto de acumulação de $B$ é 1.
+	
+	Os conjunto dos pontos de acumulação de $A$, $A' = \{(x, y) \in \mathbb{R}^2; y \ge \frac{1}{x} \quad e \quad x \ge 0 \} $.
+	
+	A fronteira de $B$, $Fr(B) = B \cap \{1\} $, pois para cada ponto de $B$, $\frac{n}{n+1}$, é possível determinar a bola aberta $B \left( \frac{n}{n+1}, \epsilon \right)$, onde $0 < \epsilon \le \frac{1}{(n+1)(n+2)} $ que contém um ponto de $B$, o centro $\frac{n}{n+1}$, e pontos que não pertencem a B. Além disso, a bola aberta $ B \left(1, \epsilon \right) $ contém pontos de $B$ e pontos que não são de $B$, portanto 1 também pertence a fronteira de B.
+	
 	\section*{Questão 6}
 	
+	Seja $ (M, d) $ um espaço métrico, como $ A, B \subset M $. Mostre que se $ A \subset B $, então $ int(A) \subset int(B) $. \textbf{Dica:} Para fazer a demostração desta inclusão, você deve tomar um $ x \in int(A)$ e provar que $ x \in int(B) $. Use fortemente a definição de interior e a hipótese.
+	
+	$ x \in int(A) \Leftrightarrow \exists r \in \mathbb{R},  r > 0; B(x, r) \subset A $ mas como $ A \subset B $, então $ \exists r \in \mathbb{R},  r > 0; B(x, r) \subset B \Leftrightarrow x \in int(B) $
+	
 	\section*{Questão 7}
+	
+	Se for verdadeiro prove, se for falso dê um contra-exemplo:
+	
+	7.1 O conjunto $A = \left\{ \frac{1}{2}, \frac{1}{4}, \frac{1}{6}, \frac{1}{8}, \cdots \right\}$ é um conjunto fechado.
+	
+	7.2 $ int(A) \cup int(B) \subset int(A \cup B) $
+	
+	$A$ é fechado se, e somente se, $A^C$ é aberto. $A^C = \{x \in \mathbb{R}; x \neq \frac{1}{2n} \forall n \in \mathbb{N} \}$. Como, de fato, $A^C = int(A^C)$, pois tomando qualquer elemento $x$ de $A$, ele estará dentro de um intervalo $ \left( \frac{1}{2n}, \frac{1}{2(n+1)} \right) $ e a bola aberta $ B\left( x, min \left( d\left( x, \frac{1}{2n} \right), d\left( x, \frac{1}{2(n+1)} \right) \right) \right) $, pode-se concluir que $ A $ é fechado.
+	
+	\begin{equation}
+		\begin{aligned}
+		x \in int(A \cup B) &\Leftrightarrow \exists r \in \mathbb{R}, r > 0; B(x, r) \subset A \cup B\\
+		&\Leftrightarrow
+		\exists r \in \mathbb{R}, r > 0; B(x, r) \subset A \quad ou \quad B(x, r) \subset B\\
+		&\Leftrightarrow x \in int(A) \quad ou \quad x \in int(B) \\
+		&\Leftrightarrow x \in int(A) \cup int(B)
+		\end{aligned}
+	\end{equation}
 	
 	
 \end{document}
