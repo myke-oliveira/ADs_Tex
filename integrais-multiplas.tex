@@ -527,7 +527,22 @@
 	
 	(Valor da questão: 1,0)
 	
+	Durante a resolução deste exercício eu considerei diversos sólidos para a modelagem, entre eles uma taça, uma garrafa, uma ponte, vários edifícios e outros objetos arquitetônicos diferentes. Mas acabei optando por objetos que eu julguei ser mais simples de modelar, mas ao mesmo tempo eu considero bonitos. Um deles foi a revolução de um cardióide, para efetuar essa tarefa eu parti da representação algébrica do cardióide em coordenadas polares, $ r(\theta) = 1 - \sen \theta $, e daí considerei o seguinte:
+	\begin{enumerate}
+		\item \label{simetria} O eixo de simetria seria $ \phi = 0 $.
+		\item \label{circulos} As secções transversais, perpendiculares ao eixo de simetria seriam todos círculos.
+		\item \label {cooresfericas}O melhor sistema de coordenadas para representar a revolução do cardióide seria o esférico.
+	\end{enumerate}
+	
+	De \ref{cooresfericas}, eu saberia que deveria definir uma função $\rho(\phi, \theta)$, mas também de \ref{circulos} eu concluo que a função não depende de $\theta$ e de \ref{simetria}. Na equação $ r(\theta) = 1 - \sen \theta $, o cardióide tem uma simetria em relação ao eixo $\theta = \frac{\pi}{2}$, para o caso \ref{simetria}, a função cosseno deveria ser substituida pela função seno que esta defasada $-\frac{\pi}{2}$. Então a função que modela a revolução do cardióide seria $ \rho(\phi, \theta) = 1 - \cos \phi $
+	
+	Outro sólido que foi modelado é uma serra, a qual foi feito utilizando um somatório de funções exponenciais de base radial na forma $ Ce^{-\sqrt{(x-x_0)^2 + (y-y_0)^2}} $. Essa função é chamada de base radial porque seu valor depende apenas da distância de um ponto dado $(x_0, y_0)$. Esse tipo de função tem aplicações do desenvolvimento de redes neurais artificiais.
+	
 	\section*{Questão 10}
 	
 	Relate aqui sua participação nos Fóruns 1 e 2.
+	
+	O fórum 1 foi a respeito de dúvidas na resolução de integrais múltiplas, eu destaque que nas vezes anteriores que eu estudei esse assunto, ocorreu de não conseguir compreender bem qual seria a região de integração a partir do enunciado do problema
+	
+	
 \end{document}
