@@ -8,6 +8,7 @@
 \usepackage{enumerate}
 \usepackage{indentfirst}
 \usepackage{grffile}
+\usepackage{float}
 
 \author{Myke Albuquerque Pinto de Oliveira}
 \title{\Huge Atividade a Distância 1 \\ 
@@ -115,14 +116,15 @@
 	
 	4.3 Determine $ d(A, B) $.
 	
-	Os conjuntos $A$ e $B$ estão representados no mesmo sistema cartesiano na figura \ref{fig:metricas-4}
+	Os conjuntos $A$ e $B$ estão representados no mesmo sistema cartesiano na figura \ref{fig:integrais-multiplas-4.1}
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\linewidth]{fig/metricas-4.1}
-		\caption{Conjuntos $A$ e $B$}
-		\label{fig:metricas-4}
+		\includegraphics[width=0.7\linewidth]{fig/integrais-multiplas.4.1}
+		\caption{Conjuntos A e B}
+		\label{fig:integrais-multiplas-4.1}
 	\end{figure}
+	
 	
 	O diâmetro do conjunto $A$ é $+\infty$, pois é possível definir um subconjunto das distâncias em $A$, dado pelos pontos simétricos sobre a curva $y = 2x^2$. Esse conjunto $\{d((x, 2x^2), (-x, 2x^2) ) = \sqrt{2x}; x \in \mathbb{R}\}$ é ilimitado superiormente, portanto $diam(A) = +\infty$
 	
@@ -152,7 +154,7 @@
 	\end{enumerate}
 	(Pontuação: 2,0 pontos)
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\linewidth]{fig/integrais-multiplas-5a}
 		\caption{Conjunto $ int(A) $}
@@ -163,13 +165,13 @@
 	
 	Os conjunto dos pontos de acumulação de $A$, $A' = \{(x, y) \in \mathbb{R}^2; y \ge \frac{1}{x} \quad e \quad x \ge 0 \} $.
 	
-	A fronteira de $B$, $Fr(B) = B \cap \{1\} $, pois para cada ponto de $B$, $\frac{n}{n+1}$, é possível determinar a bola aberta $B \left( \frac{n}{n+1}, \epsilon \right)$, onde $0 < \epsilon \le \frac{1}{(n+1)(n+2)} $ que contém um ponto de $B$, o centro $\frac{n}{n+1}$, e pontos que não pertencem a B. Além disso, a bola aberta $ B \left(1, \epsilon \right) $ contém pontos de $B$ e pontos que não são de $B$, portanto 1 também pertence a fronteira de B.
+	A fronteira de $B$, $Fr(B) = B \cup \{1\} $, pois para cada ponto de $B$, $\frac{n}{n+1}$, é possível determinar a bola aberta $B \left( \frac{n}{n+1}, \epsilon \right)$, onde $0 < \epsilon \le \frac{1}{(n+1)(n+2)} $ que contém um ponto de $B$, o centro $\frac{n}{n+1}$, e pontos que não pertencem a B. Além disso, a bola aberta $ B \left(1, \epsilon \right) $ contém pontos de $B$ e pontos que não são de $B$, portanto 1 também pertence a fronteira de B.
 	
 	\section*{Questão 6}
 	
 	Seja $ (M, d) $ um espaço métrico, como $ A, B \subset M $. Mostre que se $ A \subset B $, então $ int(A) \subset int(B) $. \textbf{Dica:} Para fazer a demostração desta inclusão, você deve tomar um $ x \in int(A)$ e provar que $ x \in int(B) $. Use fortemente a definição de interior e a hipótese.
 	
-	$ x \in int(A) \Leftrightarrow \exists r \in \mathbb{R},  r > 0; B(x, r) \subset A $ mas como $ A \subset B $, então $ \exists r \in \mathbb{R},  r > 0; B(x, r) \subset B \Leftrightarrow x \in int(B) $
+	$ x \in int(A) \Leftrightarrow \exists r \in \mathbb{R},  r > 0; B(x, r) \subset A $ mas como $ A \subset B $, então $ \exists r \in \mathbb{R},  r > 0; B(x, r) \subset A \subset B \Rightarrow \exists r \in \mathbb{R},  r > 0; B(x, r)\subset B \Leftrightarrow x \in int(B) $
 	
 	\section*{Questão 7}
 	
@@ -179,15 +181,14 @@
 	
 	7.2 $ int(A) \cup int(B) \subset int(A \cup B) $
 	
-	$A$ é fechado se, e somente se, $A^C$ é aberto. $A^C = \{x \in \mathbb{R}; x \neq \frac{1}{2n} \forall n \in \mathbb{N} \}$. Como, de fato, $A^C = int(A^C)$, pois tomando qualquer elemento $x$ de $A$, ele estará dentro de um intervalo $ \left( \frac{1}{2n}, \frac{1}{2(n+1)} \right) $ e a bola aberta $ B\left( x, min \left( d\left( x, \frac{1}{2n} \right), d\left( x, \frac{1}{2(n+1)} \right) \right) \right) $, pode-se concluir que $ A $ é fechado.
+	O conjunto $A = \{x \in \mathbb{R}; x = \frac{1}{2n} \forall n \in \mathbb{N} \}$ não tem pontos de acumulação, portanto $ \bar{A} = A \cup A' = A \cup \varnothing = A $, e como $A = \bar{A}$, pela proposição 2.9, o conjunto $A$ é fechado.
 	
 	\begin{equation}
 		\begin{aligned}
-		x \in int(A \cup B) &\Leftrightarrow \exists r \in \mathbb{R}, r > 0; B(x, r) \subset A \cup B\\
-		&\Leftrightarrow
-		\exists r \in \mathbb{R}, r > 0; B(x, r) \subset A \quad ou \quad B(x, r) \subset B\\
-		&\Leftrightarrow x \in int(A) \quad ou \quad x \in int(B) \\
-		&\Leftrightarrow x \in int(A) \cup int(B)
+		x \in int(A) \cup int(B) &\Rightarrow x \in int (A)\quad ou \quad x \in int(B) \\
+		&\Rightarrow \exists r \in \mathbb{R}, r > 0; B(x, r) \subset A \quad ou \quad B(x, r) \subset B \\
+		&\Rightarrow \exists r \in \mathbb{R}, r > 0; B(x, r) \subset A \cup B \\
+		&\Rightarrow x \in int(A \cup B)
 		\end{aligned}
 	\end{equation}
 	
