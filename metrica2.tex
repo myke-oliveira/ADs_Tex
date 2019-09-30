@@ -9,6 +9,7 @@
 \usepackage{indentfirst}
 \usepackage{grffile}
 \usepackage{float}
+\usepackage{amsthm}
 
 \author{Myke Albuquerque Pinto de Oliveira}
 \title{\Huge Atividade a Distância 2 \\ 
@@ -22,6 +23,156 @@
 	\maketitle
 	\newpage
 	
+	\section{Questão 1}
+	
+	Esta questão requer que você pesquise um pouco sobre a história da topologia e seus personagens. Procure fazer um texto entre 20 e 30 linhas sobre o tema e então publique na ferramenta exposição. Não esqueça de indicar a bibliografia usada na sua pesquisa, você deve usar pelo menos um livro e um texto digital.
+	
+	(Pontuação: 2.0 pontos)
+	
+	
+	\section{Questão 2}
+	
+	Seja a sequência em $\mathbb{R}^2$ dada por $z_n = \left( \frac{n-1}{n}, \frac{3}{n} \right)$, intuitivamente esta sequência converge para que ponto? Agora utilizando a definição 3.3, confirme a convergência para o  ponto que você indicou.
+	
+	(Pontuação: 2.0 pontos)
+	
+	Intuitivamente a sequência converge para o ponto $(1, 0)$.
+	
+	\begin{equation}
+		\begin{aligned}
+		d\left(z_n, \left(1, 0\right)\right) &= d\left(\left( \frac{n-1}{n}, \frac{3}{n} \right), \left(1, 0\right)\right) = \sqrt{\left(\frac{n-1}{n} - 1\right)^2 + \left(\frac{3}{n} - 0\right)^2} \\
+		&=\sqrt{\left(\frac{-1}{n}\right)^2 + \left(\frac{3}{n}\right)^2} = \sqrt{\frac{10}{n^2}} = \frac{\sqrt{10}}{n}
+		\end{aligned}
+	\end{equation}
+	
+	O resultado esperado é que para qualquer $\epsilon > 0$, tenha-se:
+	
+	\begin{equation}
+		\frac{\sqrt{10}}{n} < \epsilon
+	\end{equation}
+	
+	Faz-se necessário que $n$ atenda a restrição \ref{eq:restricao}, então toma-se $n_0$ o primeiro natural imediatamente maior que $\frac{\sqrt{10}}{\epsilon}$.
+	
+	\begin{equation}
+		\frac{n}{\sqrt{10}} > \frac{1}{\epsilon}
+	\end{equation}
+	
+	\begin{equation}\label{eq:restricao}
+		n > \frac{\sqrt{10}}{\epsilon}
+	\end{equation}
+	
+	\begin{equation}
+		\forall \epsilon > 0, \exists n_0 \in \mathbb{N}, n_0 > \frac{\sqrt{10}}{\epsilon} / d\left(z_n, \left(1, 0\right)\right) < \epsilon \quad \blacksquare
+	\end{equation}
+	
+	\section{Questão 3}
+	
+	Esta questão é baseada no texto da midiateca sobre pontos de fronteira: Seja $ A \subset \mathbb{R}^2 $ o conjunto dos pontos de ordenada maior do que 1, isto é, $ A = \left\{ (x, y) \in \mathbb{R}^2  / y > 1\right\} $. Utilize a proposição do Texto para provar que os pontos do tipo $(a, 1)$ estão na fronteira do conjunto $A$.
+	
+	(Pontuação: 2.0 pontos)
+	
+	Pela proposição 1 do texto, a fronteira de um conjunto pode ser encontrada da seguinte forma:
+	
+	\begin{equation} \label{eq:proposicao1}
+		Fr(A) = \bar{A} \cap \bar{A^C}
+	\end{equation}
+	
+	O fecho de $A$ é o conjunto que, além dos pontos do interior de $A$, contem também seus pontos de acumulação. Nesse caso os pontos de acumulação $(x, y)$ são os quais $y = 1$. Logo o Fecho de $A$:
+	
+	\begin{equation}
+		\bar{A} = \left\{ (x, y) \in \mathbb{R}^2 / y \ge 1 \right\}
+	\end{equation}
+	
+	O complementar de $A$ é dado por:
+	
+	\begin{equation}
+		A^C = \left\{ (x, y) \in \mathbb{R}^2 / y \le 1 \right\}
+	\end{equation}
+	
+	E o fecho do complementar de $A$:
+	
+	\begin{equation}
+		\bar{A^C} = \left\{ (x, y) \in \mathbb{R}^2 / y \le 1 \right\}
+	\end{equation}
+	
+	Retomando \ref{eq:proposicao1}:
+	
+	\begin{equation}
+		Fr(A) = \left\{ (x, y) \in \mathbb{R}^2 / y \ge 1 \right\} \cap \left\{ (x, y) \in \mathbb{R}^2 / y \le 1 \right\}
+	\end{equation}
+	
+	\begin{equation}
+		Fr(A) = \left\{ (x, y) \in \mathbb{R}^2 / y = 1 \right\}
+	\end{equation}
+	
+	Ou seja, os pontos da fronteira de $A$ são na forma $(a, 1)$ para todo $a \in \mathbb{R}$. Como queríamos provar.
+	
+	\section{Questão 4}
+	
+	Sejam $(x_n)$ e $(y_n)$ sequências em um espaço métrico $M$ com $ \lim x_n = \lim y_n = a $. Mostre que dado $ \epsilon > 0$, existe um $n_0$ tal que $d(x_n, y_n) < \epsilon$ para todo $ n \ge n_0$.
+	
+	\textbf{Atenção:}
+	
+	\begin{enumerate}[(1)]
+		\item Não existe expressão para a métrica d.
+		
+		\item Em $\lim x_n = a \in M$, você deve escrever a definição de convergência para as duas sequências.
+		
+	\end{enumerate}
+
+	(Pontuação: 2.0 pontos)
+	
+	\begin{equation} \label{eq:convergencia}
+	\begin{cases}
+	\lim x_n = a \Rightarrow \forall \epsilon_1 > 0, \exists n_{01} \in \mathbb{N} /\forall n > n_{01}, d(x_n, a) < \epsilon_1\\
+	\lim y_n = a \Rightarrow \forall \epsilon_2 > 0, \exists n_{02} \in \mathbb{N} /\forall n > n_{02}, d(y_n, a) < \epsilon_2\\
+	\end{cases}
+	\end{equation}
+	
+	Tomando $n_0 = min(n_{01}, n_{02})$, pode-se reescrever \ref{eq:convergencia} como:
+	
+	\begin{equation} \label{eq:convergencia}
+	\begin{cases}
+	\lim x_n = a \Rightarrow \forall \epsilon_1 > 0, \exists n_{0} \in \mathbb{N} /\forall n > n_{0}, d(x_n, a) < \epsilon_1\\
+	\lim y_n = a \Rightarrow \forall \epsilon_2 > 0, \exists n_{0} \in \mathbb{N} /\forall n > n_{0}, d(y_n, a) < \epsilon_2\\
+	\end{cases}
+	\end{equation}
+	
+	Tomando a propriedade M3 de métrica, tem-se que:
+	
+	\begin{equation}
+		d(x_n, y_n) \le d(x_n, a) + d(a, y_n) = d(x_n, a) + d(y_n, a) = \epsilon_1 + \epsilon_2
+	\end{equation}
+	
+	\begin{equation}
+	d(x_n, y_n) \le \epsilon_1 + \epsilon_2
+	\end{equation}
+	
+	Definindo $ \epsilon = \epsilon_1 + \epsilon_2 $ e recapitulando.
+	
+	\begin{equation}
+	\forall \epsilon > 0, \exists n_0 \in \mathbb{N} / \forall n > n_0, d(x_n, y_n) < \epsilon \quad \blacksquare
+	\end{equation}
+	
+	
+	\section{Questão 5}
+	
+	Para esta questão, você precisa ler com atenção a seção 3 do capítulo 2 do livro "Topologia" disponível na midioteca.
+	
+	Suponha $M$ um espaço métrico e $d$ uma métrica proveniente de uma norma, isto é, $d(x, y) = \| x - y \|$. Usando a definição, mostre que se $(x_n)$ e $(y_n)$ são sequências de Cauchy em $M$, então $(w_n) = (x_n \cdot y_n) $ é uma sequência de Cauchy.
+	
+	\textbf{Dica:} Você deve começar escrevendo a definição de Cauchy para $(x_n)$ e $(y_n)$, não esqueça de "ajeitar" o epsilon. Use também o fato de que se uma sequência é de Cauchy, então é limitada, ou seja, existe $M$ e $L$ tais que $\| x_n \| < M$ e $\| y_n \| < L$, para todo $n$. Em um dado momento ao calcular $d(w_n, w_m) = \| x_n y_n - x_m y_m \|$ você deverá somar e subtrair um termo de modo que apareça a definição de $(x_n)$ e $(y_n)$ serem de Cauchy.
+	
+	(Pontuação: 2.0 pontos)
+	
+	$(x_n)$ e $(y_n)$ são sequencias de Cauchy, então $\forall \frac{\epsilon}{2M} > 0, \exists n_0 \in \mathbb{N}$ tal que $d(x_n, x_m) < \frac{\epsilon}{2M}, \forall m, n > n_0$, e também $\forall \frac{\epsilon}{2L} > 0, \exists n_0 \in \mathbb{N}$ tal que $d(y_n, y_m) < \frac{\epsilon}{2L}, \forall m, n > n_0$.
+	
+	Tomando $w_n = x_n \cdot y_n$, $d(w_n, w_m) = \| x_n\cdot y_n - x_m \cdot y_m \|
+	= \| x_n\cdot y_n - x_n \cdot y_m + x_n \cdot y_m - x_m \cdot y_m \| = \| x_n (y_n - y_m) - y_m (x_n - x_m) \| \le \| x_n (y_n - y_m)\| + \|y_m (x_n - x_m) \| = \| x_n \| \cdot \|(y_n - y_m)\| + \| y_m \| \cdot \|(x_n - x_m) \|$.
+	
+	Como, pela proposição 16, $\forall n, \|x_n\| \le M$ e $\forall m, \|y_m\| \le L$, então $ d(w_n, w_m) \le \| x_n \| \cdot \|(y_n - y_m)\| + \| y_m \| \cdot \|(x_n - x_m) \| \le M \cdot \|(y_n - y_m)\| + L \cdot \|(x_n - x_m) \|$.
+	
+	Da definição de sequências de cauchy dada para $(x_n)$ e $(y_n)$, $d(w_n, w_m) < M \frac{\epsilon}{2M} + L \cdot \frac{\epsilon}{2L} = \epsilon$. Como queríamos provar.
 	
 	
 \end{document}
